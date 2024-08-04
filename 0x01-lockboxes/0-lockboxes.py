@@ -7,18 +7,14 @@ and may contain keys to other boxes. Method to determine if all boxes can open
 
 def canUnlockAll(boxes):
     """method to determine if all boxes can open"""
-    if not boxes:
-        return False
-    unlocked = []
-    i = 0
-    length = len(boxes)
+    count = 0
+    n = len(boxes)
     
-    for i, box in enumerate(boxes):
-        if not box:
-            continue
-        for key in box:
-            if key < length and key not in unlocked and key != i:
-                unlocked.append(key)
-    if len(unlocked) == length:
-            return True
+    for idx in range(1, n):
+        for num, box in enumerate(boxes):
+            if idx in box and idx != num:
+                count += 1
+                break
+    if count >= n - 1:
+        return True
     return False
