@@ -11,20 +11,17 @@ def validUTF8(data):
     """
     if len(data) == 0:
         return False
-    try:
-        for number in data:
-            first_8_bits = f'{number:08b}'
-            valid_first_bits = ['0', '110', '1110', '11110']
-            if first_8_bits[0] in valid_first_bits:
-                continue
-            elif first_8_bits[:3] in valid_first_bits:
-                continue
-            elif first_8_bits[:4] in valid_first_bits:
-                continue
-            elif first_8_bits[:5] in valid_first_bits:
-                continue
-            else:
-                return False
-    except Exception:
-        return False
+    for number in data:
+        first_8_bits = f'{number:08b}'
+        valid_first_bits = ['0', '110', '1110', '11110']
+        if first_8_bits[0] in valid_first_bits:
+            continue
+        elif first_8_bits[:3] in valid_first_bits:
+            continue
+        elif first_8_bits[:4] in valid_first_bits:
+            continue
+        elif first_8_bits[:5] in valid_first_bits:
+            continue
+        else:
+            return False
     return True
