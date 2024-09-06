@@ -9,8 +9,6 @@ def validUTF8(data):
     returns True if data is a valid UTF-8 encoding
     else return False
     """
-    if len(data) == 0:
-        return False
     for number in data:
         first_8_bits = f'{number:08b}'
         valid_first_bits = ['0', '110', '1110', '11110']
