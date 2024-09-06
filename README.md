@@ -1,3 +1,2 @@
 # ALX INTERVIEW
-
-This repo contains practice of mock interview questions.
+This repo contains project on interview question at alx Africa.
